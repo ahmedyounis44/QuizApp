@@ -11,11 +11,11 @@ class HomeWelcomeWidget extends StatelessWidget {
       clipper: HomeCurvePaint(),
       child: Container(
         width: double.maxFinite,
-        height: 250,
+        height: 300,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: Image.asset(Assets.images.oldspace.path).image,
-            fit: BoxFit.fitWidth,
+            fit: BoxFit.cover,
           ),
         ),
         child: Column(

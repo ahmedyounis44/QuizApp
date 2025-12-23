@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_application/Widgets/pentagon_clipper_paint.dart';
+import 'package:quiz_application/gen/assets.gen.dart';
 
 class LevelCard extends StatelessWidget {
   final int level;
@@ -24,14 +25,13 @@ class LevelCard extends StatelessWidget {
           children: List.generate(3, (index) {
             if (index == 1) {
               return Transform.translate(
-                offset: const Offset(0, -3.2), 
-                child:  Icon(
+                offset: const Offset(0, -3.2),
+                child: Icon(
                   index < stars ? Icons.star : Icons.star_border,
                   color: Colors.amber,
                   size: 18,
                 ),
               );
-              
             } else {
               return Icon(
                 index < stars ? Icons.star : Icons.star_border,
@@ -42,19 +42,25 @@ class LevelCard extends StatelessWidget {
           }),
         ),
         const SizedBox(height: 8),
-
-        // Pentagon Card
         ClipPath(
           clipper: PentagonClipperPaint(),
-          child: Container(
+          child: SizedBox(
             width: 110,
             height: 110,
-            decoration: BoxDecoration(
-              color: isLocked ? color.withAlpha(20) : color,
-            ),
             child: Stack(
               alignment: Alignment.center,
               children: [
+                Positioned.fill(
+                  child: Image.asset(
+                    Assets.images.oldspace.path, 
+                    fit: BoxFit.cover, 
+                  ),
+                ),
+                Positioned.fill(
+                  child: Container(
+                    color: isLocked?color.withValues(alpha: 0.75): color.withValues(alpha: 0.28),
+                  ),
+                ),
                 if (isLocked)
                   const Icon(Icons.lock, color: Colors.white, size: 30)
                 else

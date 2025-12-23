@@ -15,7 +15,7 @@ class LevelsScreen extends StatelessWidget {
           elevation: 0,
           leading: Container(
             decoration: const BoxDecoration(
-              color:Color(0xFF1F1153),
+              color:Color(0xFF352864),
               shape: BoxShape.circle,
             ),
             child: const BackButton(color: Colors.white),
