@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_application/Widgets/home_curve_paint.dart';
+import 'package:quiz_application/Screens/levels_screen.dart';
 import 'package:quiz_application/Widgets/home_welcome_widget.dart';
-import 'package:quiz_application/gen/assets.gen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,7 +39,12 @@ class HomeScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 55,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => LevelsScreen(),),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF6C63FF),
                           shape: RoundedRectangleBorder(
