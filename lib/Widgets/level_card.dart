@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_application/Widgets/pentagon_Clipper_paint.dart';
+import 'package:quiz_application/Widgets/pentagon_clipper_paint.dart';
 
 class LevelCard extends StatelessWidget {
   final int level;
