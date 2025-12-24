@@ -52,35 +52,36 @@ class LevelCard extends StatelessWidget {
               children: [
                 Positioned.fill(
                   child: Image.asset(
-                    Assets.images.oldspace.path, 
-                    fit: BoxFit.cover, 
+                    Assets.images.oldspace.path,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Positioned.fill(
                   child: Container(
-                    color: isLocked?color.withValues(alpha: 0.75): color.withValues(alpha: 0.28),
+                    color: isLocked
+                        ? color.withValues(alpha: 0.75)
+                        : color.withValues(alpha: 0.28),
                   ),
                 ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Level",
+                      style: TextStyle(color: Colors.white70, fontSize: 14),
+                    ),
+                    Text(
+                      level.toString().padLeft(2, '0'),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
                 if (isLocked)
-                  const Icon(Icons.lock, color: Colors.white, size: 30)
-                else
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Level",
-                        style: TextStyle(color: Colors.white70, fontSize: 14),
-                      ),
-                      Text(
-                        level.toString().padLeft(2, '0'),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                  const Icon(Icons.lock, color: Colors.white, size: 30),
               ],
             ),
           ),
